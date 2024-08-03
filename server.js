@@ -3,9 +3,11 @@ const app = express()
 const mongoose = require("mongoose")
 const env =require("dotenv").config()
 const sessionConnect = require("./express-session/express-session");
+const sessionLimit = require("./session-limiter/sessionlimiter")
 
 app.use(express.json())
-sessionConnect(app);
+sessionConnect(app)
+sessionLimit(app)
 
 
 const registerRoute = require("./routes/Authentication/Register")
@@ -14,8 +16,6 @@ const addtoCartroute =require("./routes/Cart/addtoCart")
 const removeitemRoute = require("./routes/Cart/removeitem")
 const clearcartRoute = require("./routes/Cart/clearCart")
 const logoutRoute = require("./routes/Authentication/logout")
-
-
 const viewcartRoute =require("./routes/Cart/viewcart")
 
 
