@@ -79,3 +79,6 @@ This project is a Node.js backend for an e-commerce application. It includes use
 ├── .env
 ├── package.json
 └── server.js
+
+
+Contributions are welcome! Please open an issue or submit a pull request.
