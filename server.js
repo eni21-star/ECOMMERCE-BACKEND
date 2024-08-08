@@ -13,21 +13,42 @@ sessionLimit(app)
 const registerRoute = require("./routes/Authentication/Register")
 const loginRoute = require("./routes/Authentication/login")
 const addtoCartroute =require("./routes/Cart/addtoCart")
+//products
+const viewAllProductsRoute = require("./routes/Products/viewproducts")
+const getOneProductRoute = require("./routes/Products/singleproduct")
+const uploadProductRoute = require("./routes/Products/uploadProduct")
+const updateProductRoute = require("./routes/Products/updateProduct")
+const deleteProductRoute = require("./routes/Products/deleteProduct")
+
+// cart
 const removeitemRoute = require("./routes/Cart/removeitem")
 const clearcartRoute = require("./routes/Cart/clearCart")
 const logoutRoute = require("./routes/Authentication/logout")
 const viewcartRoute =require("./routes/Cart/viewcart")
 
+// user management
+const usermanagementRoute = require("./routes/userManagement/usermanagement")
 
+//Authentication
 app.use('/register', registerRoute);
 app.use('/login', loginRoute);
+app.use('/logout', logoutRoute)
+
+//Cart
 app.use('/addtocart', addtoCartroute);
 app.use('/cart', viewcartRoute);
 app.use('/removeitem', removeitemRoute)
 app.use('/clearcart', clearcartRoute)
-app.use('/logout', logoutRoute)
 
+//Product
+app.use('/products', viewAllProductsRoute)
+app.use("/product", getOneProductRoute)
+app.use("/product", uploadProductRoute)
+app.use("/update", updateProductRoute)
+app.use("/delete", deleteProductRoute)
 
+// user management
+app.use("/users", usermanagementRoute)
 
 
 

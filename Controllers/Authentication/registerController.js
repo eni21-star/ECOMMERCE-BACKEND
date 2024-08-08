@@ -6,7 +6,7 @@ const userModel = require("../../models/users")
 
 const registerController = async (req, res) => {
     try {
-        const { email, username, password } = req.body
+        const { email, username, password, admin } = req.body
         if (!email || !username || !password) {
             res.status(400).json({ message: "incomplete credentials" })
         }
@@ -21,7 +21,7 @@ const registerController = async (req, res) => {
             }
             else {
                 const hashedpassword = await bcrypt.hash(password, 10)
-                const createUser = await userModel.create({ email: email, username: username, password: hashedpassword });
+                const createUser = await userModel.create({ email: email, username: username, password: hashedpassword, admin: admin || false  });
                 if (createUser) {
                     res.status(201).json({
                         message: "User created successfully"
