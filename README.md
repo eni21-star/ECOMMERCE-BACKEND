@@ -81,5 +81,5 @@ This project is a Node.js backend for an e-commerce application. It includes use
 └── server.js
 
 
-
+### Contributions
 Contributions and Feedback are welcome! Please open an issue or submit a pull request.

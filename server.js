@@ -29,6 +29,9 @@ const viewcartRoute =require("./routes/Cart/viewcart")
 // user management
 const usermanagementRoute = require("./routes/userManagement/usermanagement")
 
+// Product Reviews
+const reviewProductRoute = require("./routes/reviews/Productreviews")
+
 //Authentication
 app.use('/register', registerRoute);
 app.use('/login', loginRoute);
@@ -50,8 +53,8 @@ app.use("/delete", deleteProductRoute)
 // user management
 app.use("/users", usermanagementRoute)
 
-
-
+// Product Reviews
+app.use("/review", reviewProductRoute)
 
 mongoose.connect(process.env.MONGO_DB)
 .then(()=>{
