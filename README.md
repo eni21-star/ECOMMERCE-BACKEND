@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# ECOMMERCE-BACKEND
-=======
 
 ---
 
@@ -118,4 +115,3 @@ Contributions are welcome! Please open an issue or submit a pull request if you'
 For any inquiries, please reach out to [eniolaolagbegi@gmail.com](mailto:eniolaolagbegi@gmail.com).
 
 ---
->>>>>>> dev
