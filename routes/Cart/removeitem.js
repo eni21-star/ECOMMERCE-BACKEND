@@ -8,7 +8,7 @@ const { body, validationResult } = require("express-validator");
 
 const validateRequestBody = [
 
-    body('userid').notEmpty().isString().withMessage(" user id is not valid or missing"),
+   
     body('itemid').notEmpty().isString().withMessage("itemid is not valid or missing"),
     
     (req, res, next) => {

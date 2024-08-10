@@ -4,13 +4,6 @@ const env = require("dotenv").config()
 
 const schema = new mongoose.Schema({
 
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'users',
-        required: true,
-        index: true
-    },
-
     product: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'product',
@@ -22,13 +15,18 @@ const schema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    price: {
-        type: Number,
+
+    description: {
+        type: String,
         required: true
     },
-    quantity:
-    {
+    price: {
         type: Number,
+        required: true,
+    },
+    category:
+    {
+        type: String,
         required: true
     }
 },
@@ -36,5 +34,5 @@ const schema = new mongoose.Schema({
         timestamps: true
     })
 
-const cart = mongoose.model("cart", schema);
-module.exports = cart
+const outOfStock = mongoose.model("outofstock", schema);
+module.exports = outOfStock

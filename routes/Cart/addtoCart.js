@@ -9,7 +9,7 @@ const { body, validationResult } = require("express-validator");
 
 const validateRequestBody = [
 
-    body('userid').notEmpty().isString().withMessage(" user id is missing"),
+   
     body('itemID').notEmpty().isString().withMessage("Please enter your username"),
     body('quantity').notEmpty().matches(/\d/).withMessage("quantity is not a digit"),
     

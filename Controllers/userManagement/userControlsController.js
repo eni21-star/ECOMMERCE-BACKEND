@@ -51,7 +51,7 @@ const updateUser = async (req, res)=>{
     const user = req.session.user
     try {
         const {id} = req.params
-        const { email ,username, password, admin} = req.body
+        const { email ,username, admin} = req.body
         if(user.admin)
         {
          const getuser = await userModel.findByIdAndUpdate(id, { email:email, username:username, admin: admin }, {new: true} )

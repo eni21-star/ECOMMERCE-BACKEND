@@ -3,10 +3,14 @@ const session = require("express-session");
 const redis = require("redis");
 const redisStore = require("connect-redis").default;
 
+const redisUrl = process.env.REDIS_URL
+
+const redisUrlParsed = new URL(redisUrl);
+
 const redisClient = redis.createClient({
     socket: {
-        port: 6379,
-        host: "127.0.0.1"
+        port: redisUrlParsed.port,
+        host: redisUrlParsed.hostname
     }
 });
 

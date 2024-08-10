@@ -22,6 +22,12 @@ const schema = new mongoose.Schema({
         type: String,
         required: true,
     },
+
+    productName: {
+        type: String,
+        required: true
+    },
+
     price: {
         type: Number,
         required: true
@@ -30,11 +36,21 @@ const schema = new mongoose.Schema({
     {
         type: Number,
         required: true
+    },
+    address: 
+    {
+        type: String,
+        required: true   
+    },
+    shippingCourier:
+    {
+        type: String,
+        required: true  
     }
 },
     {
         timestamps: true
     })
 
-const cart = mongoose.model("cart", schema);
-module.exports = cart
+const invoice = mongoose.model("invoice", schema);
+module.exports = invoice

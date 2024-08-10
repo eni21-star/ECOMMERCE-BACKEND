@@ -23,7 +23,7 @@ const validateRequestBody = [
 
     body('email').notEmpty().isString().withMessage("email is missing"),
     body('username').notEmpty().isString().withMessage("username is missing"),
-    body('admin').notEmpty().isString().withMessage("admin tag is missing"),
+    body('admin').notEmpty().isBoolean().withMessage("admin tag is missing"),
     (req, res, next) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {

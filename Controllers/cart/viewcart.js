@@ -6,23 +6,22 @@ const cartModel = require("../../models/cart")
 const viewcart = async (req, res) => {
 
     const user = req.session.user
+    if(!user)
+    {
+        return res.status(401).json({message: "unauthorized"})
+    }
     
     try {
 
-        const { userid } = req.body
-        if (userid === user._id) {
-            const cart = await cartModel.find({ user: userid })
+      
+            const cart = await cartModel.find({ user: user._id })
             if (cart.length===0) {
-              return  res.status(404).json({ message: "empty cart" })
+              return  res.status(204).json({ message: "empty cart" })
             }
             else {
-               return res.status(201).json(cart)
+               return res.status(200).json(cart)
             }
-        }
-        else
-        {
-            return res.status(401).json("you are unauthorized to view this cart")
-        }
+    
 
     } catch (error) {
         return res.status(500).json(error.message)

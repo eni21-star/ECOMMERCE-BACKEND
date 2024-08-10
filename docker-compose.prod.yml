@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  e-comm-container:
+    build: 
+      context: .
+      args:  
+        NODE_ENV: production 
+    environment:
+       NODE_ENV: production
+       PORT: 3000
+       MONGO_DB: mongodb://mongo:27017/cart
+       SECRETKEY: JFJ93DD603KSNUGYUR75OSLXNCNMR7GA538TIRKDN7W73CJI575602KFNR8
+       REDIS_URL: redis://redis:6379
+    command: node server
