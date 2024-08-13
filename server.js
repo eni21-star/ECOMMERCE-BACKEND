@@ -69,9 +69,9 @@ app.use("/api/v1/invoice", invoiceRoute)
 
 mongoose.connect(process.env.MONGO_DB)
     .then(() => {
-        console.log("connected to database successfully")
+        console.log("connected to DB successfully")
         app.listen(process.env.PORT, () => { console.log(`server is runing on port ${process.env.PORT}`) })
     })
     .catch(() => {
         console.log("connection to DB failed ")
-    })
+    }) 
