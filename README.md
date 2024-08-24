@@ -2,6 +2,7 @@
 ---
 
 # Express E-Commerce API
+NOTE: THIS PROJECT WAS NOT BUILT ON THE STANDARD Modular Layered Architecture IT WAS BUILT FOR RECREATIONAL PURPOSES.
 
 Welcome to the Express E-Commerce API! This project is a robust backend solution for an e-commerce platform built with Express.js and MongoDB. It provides a range of functionalities, including user authentication, product management, cart operations, and more.
 
